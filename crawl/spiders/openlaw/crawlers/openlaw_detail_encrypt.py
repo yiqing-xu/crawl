@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Author  : xuyiqing
 # @Time    : 2019/8/19 17:31
-# @File    : openlaw_detail_encrypt.py
+# @File    : openlaw_detail_encrypt.p
 # @Software: PyCharm
 import os
 
@@ -47,8 +47,6 @@ class OpenlawDetailSpider(OpenlawListSpider):
                     self.get_cookies(document, url)
 
     def get_content(self, document, resp, url):
-        import pdb
-        pdb.set_trace()
         html = etree.HTML(resp.text)
         html_title = html.xpath('/html/head/title/text()')[0]
         if html_title == "OpenLaw":
@@ -70,8 +68,6 @@ class OpenlawDetailSpider(OpenlawListSpider):
         content_str = "\n".join(content_text[1:-2])
 
     def get_cookies(self, document, url):
-        import pdb
-        pdb.set_trace()
         resp = self.parse_resptext(url, self.cookies)
         resp_html = etree.HTML(resp.text)
         html_title = resp_html.xpath('/html/head/title/text()')[0]

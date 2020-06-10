@@ -22,8 +22,6 @@ async def main():
     res = await page.goto(url, options={'timeout': 1000})
     resp_headers = res.headers  # 响应头
     resp_status = res.status  # 响应状态
-    import pdb
-    pdb.set_trace()
     # 等待
     # 打印页面cookies
     print(await page.cookies())
